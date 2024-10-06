@@ -1,0 +1,72 @@
+body
+{
+	background-color: darkgray;
+}
+
+#logo
+{
+	background-color: darkcyan;
+	font: bolder;
+	color: white;
+	text-align: left;
+	padding: 10px;
+}
+
+#nav
+{
+	
+	text-align: center;
+	font-weight: bold;
+	background-color: darkgray;
+	
+}
+
+#button
+{
+	border-style: outset;
+}
+
+#contact
+{
+	text-align: left;
+	font: message-box;
+}
+
+#logoKontakt
+{
+	font: message-box;
+	text-align: center;
+}
+
+#container
+{
+	font: message-box;
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#content
+{
+	
+}
+
+#corpright
+{
+	background-color: darkcyan;
+	font: message-box;
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+	font: bolder;
+	
+	text-align: center;
+	
+
+}
+
+#hr
+{
+	background-color: gray;
+}
