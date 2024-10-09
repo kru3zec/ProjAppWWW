@@ -1,6 +1,6 @@
 html
 {
-	background-image: url(background.jpg);
+	background-image: url(images/background.jpg);
 	background-attachment:unset;
 	
 }
@@ -41,6 +41,7 @@ body
 {
 	border-style: outset;
 	color: black;
+	
 	
 }
 
@@ -101,12 +102,7 @@ a:visited
 	color:black;
 }
 
-#nav
-{
-	text-align: center;
-	font-weight: bold;
-	background-color: darkcyan;
-}
+
 
 a:hover
 {
@@ -114,3 +110,30 @@ a:hover
 	
 	
 }
+
+nav
+{
+	text-align: center;
+	background-color: darkcyan;
+	
+}
+
+/* unvisited link */
+a:link {
+	color: black;;
+  }
+  
+  /* visited link */
+  a:visited {
+	color:black;
+  }
+  
+  /* mouse over link */
+  a:hover {
+	color: darkcyan;
+  }
+  
+  /* selected link */
+  a:active {
+	color: lightcyan;
+  }
