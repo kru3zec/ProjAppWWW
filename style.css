@@ -40,8 +40,6 @@ body
 #button
 {
 	border-style: outset;
-	color: black;
-	
 	
 }
 
@@ -118,22 +116,20 @@ nav
 	
 }
 
-/* unvisited link */
 a:link {
 	color: black;;
   }
-  
-  /* visited link */
+
   a:visited {
 	color:black;
   }
   
-  /* mouse over link */
+
   a:hover {
 	color: darkcyan;
   }
   
-  /* selected link */
+ 
   a:active {
 	color: lightcyan;
   }
