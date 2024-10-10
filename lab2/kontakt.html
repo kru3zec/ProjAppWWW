@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="pl" />
+<meta name="Author" content="Mateusz Kruszewski" />
+<meta name="description" content="komputer moją pasją" />
+<title>Kontakt - Komputer moją pasją</title>
+<script src="kolorujtlo.js" type="text/javascript"></script>
+<script src="timedate.js" type="text/javascript"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="startclock()">
+    
+    <form method="post" name="background">
+        <input type="button" value="żółty" onclick="changeBackground('#FFF000')">
+        <input type="button" value="czarny" onclick="changeBackground('#000000')">
+        <input type="button" value="biały" onclick="changeBackground('#FFFFFF')">
+        <input type="button" value="zielony" onclick="changeBackground('#00FF00')">
+        <input type="button" value="niebieski" onclick="changeBackground('#0000FF')">
+        <input type="button" value="pomarańczowy" onclick="changeBackground('#FFF800')">
+        <input type="button" value="szary" onclick="changeBackground('#c0c0c0')">
+        <input type="button" value="czerwony" onclick="changeBackground('#FF0000')">
+        </form>
+        
+        <div id="container">
+	
+            <div id="logo">
+                <h1><i>Komputer moją pasją <br /> <i>version 1.1</i> <div id="zegarek"></div> <div id="data"></div></i> </h1>
+                
+    
+            </div>
+        <div id="nav">
+            <table width="1000" height="30" align="center">
+                <tr>
+            
+            <td width="200" valign="center" bgcolor="lightgray">
+                <div id="button">
+                <a href="index.html">Rodzaje komputerów </a>
+                </td>
+
+                    <td width="200" valign="center" bgcolor="lightgray">
+                        <div id="button">
+                        <a href="peryferia.html">Urządzenia peryferyjne </a>
+                        </td>
+
+                        <td width="200" valign="center" bgcolor="lightgray">
+                            <div id="button">
+                            <a href="podzespoly.html">Podzespoły komputera </a>
+                            </td>
+
+                            <td width="200" valign="center" bgcolor="lightgray">
+                                <div id="button">
+                                <a href="systemy.html">Systemy operacyjne </a>
+                                </td>
+
+                                <td width="200" valign="center" bgcolor="lightgray">
+                                    <div id="button">
+                                    <a href="kontakt.html">Kontakt </a>
+                                    </td>
+
+</tr>
+        
+                            </div>
+                        </div>
+                        </table>
+                    </div>
+
+            
+
+                <div id="contact">
+                    <div id="logoKontakt">
+                        <h1><span style="color:#52796F">Formularz kontaktowy </h1>
+                    </div>
+                    <form action="mailto:komputery.pasja@outlook.com" method="post">
+                        
+                        <input type="text" id="name" name="name" placeholder="Wpisz imię" required>
+                        <br />
+
+                        <form action="/submit-form" method="post">
+                            
+                            <input type="text" id="surname" name="surname" placeholder="Wpisz nazwisko" required>
+                            <br />
+                        
+                        
+                        <input type="email" id="email" name="email" placeholder="Wpisz e-mail" required>
+                        <br />
+                        
+                        
+                        <textarea style="width: 1000px; height: 200px;" id="message" name="message" required placeholder="Treść wiadomości"></textarea>
+                        <br />
+                        <input type="submit" value="Wyślij">
+                    </form>
+                    <br />
+                    
+                    
+                    
+                    
+                    
+                    
+
+                </div>
+
+
+
+    <div id="corpright">
+        &copy; <i>2024 Mateusz Kruszewski</i>
+        </div>
