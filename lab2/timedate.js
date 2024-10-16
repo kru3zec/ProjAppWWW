@@ -1,6 +1,6 @@
 function gettheDate() {
     Todays = new Date();
-    TheDate = "" + (Todays.getMonth() + 1) + "/" + Todays.getDate() + "/" + (Todays.getYear() - 100);
+    TheDate = "" + Todays.getDate() + "." + (Todays.getMonth() + 1) + "." + (Todays.getYear() + 1900);
     document.getElementById("data").innerHTML = TheDate;
 }
 

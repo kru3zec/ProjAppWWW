@@ -1,4 +1,9 @@
-
+html
+{
+	background-image: url(images/background.jpg);
+	background-attachment:unset;
+	
+}
 
 body
 {
@@ -19,7 +24,7 @@ body
 	font: bolder;
 	color: white;
 	text-align: left;
-	margin-left: auto;
+	margin-left: 0px;
 	padding: 10px;
 }
 
@@ -27,13 +32,19 @@ body
 {
 	
 	text-align: right;
-	font: bolder;
+	font-weight: bolder;
+	padding: 1px;
+	float: left;
+
 }
 
 #data
 {
 	text-align: right;
-	font: bolder;
+	font-weight: bolder;
+	padding: 1px;
+	float: right;
+	
 }
 
 #nav
