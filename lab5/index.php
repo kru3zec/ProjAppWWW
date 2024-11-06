@@ -92,7 +92,7 @@ include($strona);
 
     <?php
 $nr_indeksu='169324';
-$nrGrupy='2';
+$nrGrupy='ISI 2';
 echo 'Mateusz Kruszewski '.$nr_indeksu.' grupa '.$nrGrupy.' <br/> <br/>';
     ?>
 
