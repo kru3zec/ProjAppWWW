@@ -1,0 +1,131 @@
+<script src="../js/kolorujtlo.js" type="text/javascript"></script>
+<script src="../js/liczenie.js" type="text/javascript"></script>
+<body onload="startclock()"></body>
+
+
+            <div id="data">  </div> 
+            <br>
+            <div id="zegarek"> </div>
+            
+
+        
+
+        <main>
+            <article>
+                <header class="artheader">
+<h1>Test skyptów</h1>
+</header>
+
+
+<h2>JQuery test</h2>
+<div id="animacjaTestowa1" class="test-block">Kliknij, a się powiększę</div>
+
+    <div id="animacjaTestowa2" class="test-block">Najedź kursorem, a się powiększę</div>
+    
+    <div id="animacjaTestowa3" class="test-block">Klikaj, abym urósł</div>
+
+
+    <div id="content">
+
+
+
+<header>
+    <h2>Zmiana kolorów</h2>
+</header>
+
+
+
+<form method="post" name="background">
+    <input type="button" id="button" value="żółty" onclick="changeBackground('#FFF000')">
+    <br>
+    <br>
+    <input type="button" id="button" value="czarny" onclick="changeBackground('#000000')">
+    <br>
+    <br>
+    <input type="button" id="button" value="biały" onclick="changeBackground('#FFFFFF')">
+    <br>
+    <br>
+    <input type="button" id="button" value="zielony" onclick="changeBackground('#00FF00')">
+    <br>
+    <br>
+    <input type="button" id="button" value="niebieski" onclick="changeBackground('#0000FF')">
+    <br>
+    <br>
+    <input type="button" id="button" value="pomarańczowy" onclick="changeBackground('#FFF800')">
+    <br>
+    <br>
+    <input type="button" id="button" value="szary" onclick="changeBackground('#c0c0c0')">
+    <br>
+    <br>
+    <input type="button" id="button" value="czerwony" onclick="changeBackground('#FF0000')">
+    <br>
+    <br>
+    <input type="button" id="button" value="Domyślny" onclick="changeBackground('#303030')">
+    <br>
+    
+    </form>
+    <br>
+
+    
+    <script>
+
+
+        $("#animacjaTestowa1").on("click", function(){
+            $(this).animate({
+                width: "500px",
+                opacity: 0.4,
+                fontSize: "3em",
+                borderWidth: "10px"
+            }, 1500);
+        });
+    
+    
+        $("#animacjaTestowa2").on("mouseover", function(){
+            $(this).animate({
+                width: 300
+            }, 800);
+        }).on("mouseout", function(){
+            $(this).animate({
+                width: 200
+            }, 800);
+        });
+    
+        $("#animacjaTestowa3").on("click", function() {
+            if (!$(this).is(":animated")) {
+                $(this).animate({
+                    width: "+=50",
+                    height: "+=10",
+                    opacity: "+=0.1"
+                }, {
+                    duration: 3000
+                });
+            }
+        });
+    </script>
+<br>
+
+
+<h1>Przelicznik miar</h1>
+<b>Długości</b>
+<br>
+<br>
+<div class="form-group">
+    milimetr [mm] <input class="miary-dlugosci" onkeyup="licz(this)" id="miara1" base="1"><br><br>
+    centymetr [cm] <input class="miary-dlugosci" onkeyup="licz(this)" id="miara2" base="10"><br><br>
+    decymetr [dm] <input class="miary-dlugosci" onkeyup="licz(this)" id="miara3" base="100"><br><br>
+    metr [m] <input class="miary-dlugosci" onkeyup="licz(this)" id="miara4" base="1000"><br><br>
+    kilometr [km] <input class="miary-dlugosci" onkeyup="licz(this)" id="miara5" base="1000000"><br><br>
+</div>
+<div class="form-group">
+<b>Wagi</b>
+<br>
+<br>
+    miligram [mg] <input class="form-control" id="miara6" type="text" onkeyup="licz(this)" base="1"><br><br>
+    gram [g] <input class="form-control" id="miara7" type="text" onkeyup="licz(this)" base="1000"><br><br>
+    dekagram [dg] <input class="form-control" id="miara8" type="text" onkeyup="licz(this)" base="10000"><br><br>
+    kilogram [kg] <input class="form-control" id="miara9" type="text" onkeyup="licz(this)" base="1000000"><br><br>
+    tona [T] <input class="form-control" id="g9" type="miara10" onkeyup="licz(this)" base="1000000000"><br><br>
+
+</article>
+
+</main>
