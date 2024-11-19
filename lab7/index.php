@@ -12,7 +12,7 @@ if($_GET['idp'] == 'admin') $strona = '8';
 
 include('cfg.php');
 include('showpage.php');
-include('admin.php');
+include('./admin/admin.php');
 
 ?>
 

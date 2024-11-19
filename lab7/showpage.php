@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('cfg.php');
 function PokazPodstrone($id)
 {
@@ -26,4 +27,6 @@ function PokazPodstrone($id)
     }
     
 }
+
+
 ?>
