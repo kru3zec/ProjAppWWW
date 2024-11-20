@@ -6,6 +6,8 @@ session_start();
     $baza = 'moja_strona';
     $login = 'login';
     $pass = 'haslo';
+    $login = 'admin';
+    $pass = 'admin';
 
     $link = mysqli_connect($dbhost,$dbuser,$dbpass);
     if (!$link) echo '<b>przerwane połączenie </b>';
