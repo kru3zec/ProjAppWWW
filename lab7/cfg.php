@@ -4,8 +4,8 @@ session_start();
     $dbuser= 'root';
     $dbpass = '';
     $baza = 'moja_strona';
-    $login = 'admin';
-    $pass = 'admin';
+    $login = 'login';
+    $pass = 'haslo';
 
     $link = mysqli_connect($dbhost,$dbuser,$dbpass);
     if (!$link) echo '<b>przerwane połączenie </b>';
