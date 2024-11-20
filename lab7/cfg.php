@@ -4,8 +4,6 @@ session_start();
     $dbuser= 'root';
     $dbpass = '';
     $baza = 'moja_strona';
-    $login = 'login';
-    $pass = 'haslo';
     $login = 'admin';
     $pass = 'admin';
 
