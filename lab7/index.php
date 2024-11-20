@@ -12,7 +12,7 @@ if($_GET['idp'] == 'admin') $strona = '8';
 
 include('cfg.php');
 include('showpage.php');
-include('admin.php');
+include('./admin/admin.php');
 
 ?>
 
@@ -75,12 +75,36 @@ foreach($files as $file)
 {
     if(file_exists($file) == false)
     {
-        echo "The filr $file exists";
+        echo "The file $file exists";
     }
 }
 
 
-echo(PokazPodstrone($strona));
+if($_GET['idp'] == 'admin')
+			{
+				echo(FormularzLogowania());
+				PrzetwarzanieFormularza();
+				if ($_SESSION["is_logged"] == 1)
+				{
+					include('./html/admin.html');
+					if($_GET['action'] == 'list')
+					{
+						ListaPodstron();
+					}
+					if($_GET['action'] == 'add')
+					{
+						echo(DodajNowaPodstrone());
+					}
+
+				}
+				
+				PrzetwarzajEdycje();
+				PrzetwarzajDodanie();
+
+			}
+			else{
+			echo(PokazPodstrone($strona));
+			}
 
   ?>
 

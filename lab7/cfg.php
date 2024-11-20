@@ -1,10 +1,11 @@
 <?php
+session_start();
     $dbhost= 'localhost';
     $dbuser= 'root';
     $dbpass = '';
     $baza = 'moja_strona';
-    $login = 'login';
-    $haslo = 'haslo';
+    $login = 'admin';
+    $pass = 'admin';
 
     $link = mysqli_connect($dbhost,$dbuser,$dbpass);
     if (!$link) echo '<b>przerwane połączenie </b>';
