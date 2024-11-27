@@ -115,7 +115,7 @@ if($_GET['idp'] == 'admin')
 
 <footer>
 			
-            &copy; <i>2024 Mateusz Kruszewski wersja 1.5</i>
+            &copy; <i>2024 Mateusz Kruszewski wersja 1.7</i>
             <br>
             
 		</footer>

@@ -1,9 +1,5 @@
 <?php
 include("cfg.php");
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-
 
 function PokazKontakt()
 {
@@ -29,35 +25,33 @@ function PokazKontakt()
 
 function WyslijMailaKontakt($odbiorca)
 {
-    global $email_pass;
     if (empty($_POST['temat']) || empty($_POST['tresc']) || empty($_POST['email'])) {
         echo '[nie_wypelniles_pola]';
         echo PokazKontakt();
     } else {
-        $mail = new PHPMailer(true);
-        try {
-            $mail->isSMTP();
-            $mail->Host = 'smtp.wp.pl';  
-            $mail->SMTPAuth = true;
-            $mail->Username = 'kamil.pawww@wp.pl'; 
-            $mail->Password = $email_pass;  
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-            $mail->Port = 465;  
+        $mail['subject'] = htmlspecialchars($_POST['temat']);
+        $mail['body'] = htmlspecialchars($_POST['tresc']);
+        $mail['sender'] = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 
-            $mail->setFrom('kamil.pawww@wp.pl', 'Formularz kontaktowy');
-            $mail->addAddress($odbiorca); 
+        if (!$mail['sender']) {
+            echo '[niepoprawny_adres_email]';
+            return;
+        }
 
+        $mail['reciptient'] = $odbiorca;
 
-            $mail->isHTML(true); 
-            $mail->Subject = htmlspecialchars($_POST['temat']);
-            $mail->Body    = htmlspecialchars($_POST['tresc']);
-            $mail->AltBody = htmlspecialchars(strip_tags($_POST['tresc'])); 
+        $header = "From: Formularz kontaktowy <".$mail['sender'].">\n";
+        $header .= "MIME-Version: 1.0\n";
+        $header .= "Content-Type: text/plain; charset=utf-8\n";
+        $header .= "Content-Transfer-Encoding: 8bit\n";
+        $header .= "X-Sender: <".$mail['sender'].">\n";
+        $header .= "X-Mailer: PHP/".phpversion()."\n";
+        $header .= "Return-Path: <".$mail['sender'].">\n";
 
-
-            $mail->send();
-            echo '[Wiadomosc Wyslana]';
-        } catch (Exception $e) {
-            echo "Wiadomość nie mogła zostać wysłana. Błąd: {$mail->ErrorInfo}";
+        if (mail($mail['reciptient'], $mail['subject'], $mail['body'], $header)) {
+            echo '[wiadomosc_wyslana]';
+        } else {
+            echo '[blad_wysylania]';
         }
     }
 }
@@ -65,40 +59,29 @@ function WyslijMailaKontakt($odbiorca)
 function PrzypomnijHaslo($odbiorca)
 {
     global $pass;
-    global $email_pass;
-
 
     if (empty($pass)) {
         echo '[brak_hasla]';
         return;
     }
 
+    $mail['subject'] = "Przypomnij haslo";
+    $mail['body'] = "Twoje hasło: ".$pass;
+    $mail['sender'] = 'przypomnij@example.com';
+    $mail['reciptient'] = $odbiorca;
 
-    $mail = new PHPMailer(true);
-    try {
+    $header = "From: Formularz kontaktowy <".$mail['sender'].">\n";
+    $header .= "MIME-Version: 1.0\n";
+    $header .= "Content-Type: text/plain; charset=utf-8\n";
+    $header .= "Content-Transfer-Encoding: 8bit\n";
+    $header .= "X-Sender: <".$mail['sender'].">\n";
+    $header .= "X-Mailer: PHP/".phpversion()."\n";
+    $header .= "Return-Path: <".$mail['sender'].">\n";
 
-        $mail->isSMTP();
-        $mail->Host = 'smtp.wp.pl';  
-        $mail->SMTPAuth = true;
-        $mail->Username = 'kamil.pawww@wp.pl'; 
-        $mail->Password =  $email_pass;  
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; 
-        $mail->Port = 465; 
-
-
-        $mail->setFrom('kamil.pawww@wp.pl', 'Formularz przypomnienia hasła');
-        $mail->addAddress($odbiorca); 
-
-
-        $mail->isHTML(true); 
-        $mail->Subject = "Przypomnienie hasła";
-        $mail->Body    = "Twoje hasło to: ".$pass;
-        $mail->AltBody = "Twoje hasło to: ".$pass; 
-
-        $mail->send();
-        echo '[Haslo wyslane]';
-    } catch (Exception $e) {
-        echo "Wiadomość nie mogła zostać wysłana. Błąd: {$mail->ErrorInfo}";
+    if (mail($mail['reciptient'], $mail['subject'], $mail['body'], $header)) {
+        echo '[wiadomosc_wyslana]';
+    } else {
+        echo '[blad_wysylania]';
     }
 }
 ?>
