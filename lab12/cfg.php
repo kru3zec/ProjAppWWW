@@ -7,6 +7,7 @@ session_start();
     $baza = 'moja_strona';
     $login = 'admin';
     $pass = 'admin';
+    $email_pass= 'Kam!paw2';
 
     $link = mysqli_connect($dbhost,$dbuser,$dbpass);
     if (!$link) echo '<b>przerwane połączenie </b>';
