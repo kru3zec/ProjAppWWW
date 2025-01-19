@@ -46,8 +46,8 @@ include('koszyk.php');
 <meta name="Author" content="Mateusz Kruszewski" />
 <meta name="description" content="komputer moją pasją" />
 <title>Komputer moją pasją</title>
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/style2.css">
+<link rel="stylesheet" href="css/style1.css">
+<link rel="stylesheet" href="css/style3.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://developers.google.com/speed/libraries?hl=pl#jquery"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -63,7 +63,7 @@ include('koszyk.php');
     <input type="checkbox" id="check">
 
     
-    <label for="check" class="checkbtn">
+    <label for="check" class="checkbutton">
       <i class="fas fa-bars"></i>
     </label>
 

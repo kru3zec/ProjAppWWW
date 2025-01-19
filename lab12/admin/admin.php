@@ -152,7 +152,7 @@ class Admin
                 <br>';
 
         $wynik .= '
-                Czy aktywna? <input type="checkbox" name="check" id="check" '.($status ? 'checked' : '').'><br>
+                Czy aktywna? <input type="checkbox" name="checkbtn" id="checkbtn" '.($status ? 'checked' : '').'><br>
                 <input type="hidden" name="page_id" value="'.htmlspecialchars($page_id).'">
                 <input type="submit" name="'.($is_edit ? 'edit_submit' : 'add_submit').'" value="Wyślij">
             </form>

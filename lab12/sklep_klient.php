@@ -80,11 +80,15 @@ class Sklep
         if ($result && mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '<div class="produkt">';
-                echo 'ID: ' . $row['id'] . ' | Tytuł: ' . htmlspecialchars($row['tytul']) . '<br>';
-                echo 'Opis: ' . htmlspecialchars($row['opis']) . '<br>';
-                echo 'Dostępność: ' . htmlspecialchars(sprawdzDostepnosc($row)) . '<br>';
-                echo 'Cena: ' . $row['cena_netto'] . ' PLN<br>';
                 echo '<img src="' . htmlspecialchars($row['zdjecie']) . '" alt="Zdjęcie produktu" style="max-width: 200px;"><br>';
+                echo ''. htmlspecialchars($row['tytul']) . '<br>';
+                echo 'Opis: ' . htmlspecialchars($row['opis']) . '<br>';
+                
+                echo '<div class="money">';
+                echo $row['cena_netto'] . ' zł<br>';
+                echo '</div>';
+                echo htmlspecialchars(sprawdzDostepnosc($row)) . '<br>';
+                echo 'ID produktu: ' . $row['id'] . ' ';
                 echo '<br>';
                 echo '<form method="post" action="">';
                 echo '<input type="hidden" name="produkt_id" value="' . $row['id'] . '">';

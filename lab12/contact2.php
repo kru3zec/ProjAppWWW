@@ -71,7 +71,7 @@ public function WyslijMailaKontakt($odbiorca)
 
 
             $mail->send();
-            echo '[Wiadomosc Wyslana]';
+            echo 'Wiadomość wyslana';
         } catch (Exception $e) {
             echo "Wiadomość nie mogła zostać wysłana. Błąd: {$mail->ErrorInfo}";
         }
